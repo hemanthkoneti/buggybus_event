@@ -5,7 +5,7 @@
 ### Make a virtual environment using conda
 
 ```
-conda crate -m buggybus python=3.7
+conda create -m buggybus python=3.7
 ```
 
 ### Install dependencies
