@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <style>
+html, body {
+      display: flex;
+      justify-content: center;
+     
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+      border: 2px solid #f1f1f1;
+      border-radius: 5px;
+      position: fixed;
+      background: linear-gradient(rgba(236, 181, 2, 0.958),rgb(2, 157, 192));
+      }
+      .textfeedbac{
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      .textfeedback{
+      width: 100%;
+      min-height: 20vh;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      .icon {
+      font-size: 110px;
+      display: flex;
+      justify-content: center;
+      color: #4286f4;
+      }
+      button {
+      background-color: #26b103ee;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: grab;
+      width: 30%;
+      }
+      h1 {
+      text-align:center;
+      font-size: 20px;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: center;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+  </style>
+  <body>
+    <img  style="position:absolute; height: 100vh; width: 100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6oTDGqJkjl38TF1tOOWGKp_dQ_paAv5GF-g&usqp=CAU" alt="">
+    <form method="POST">
+      <h1>Review</h1>
+      <div class="icon">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="formcontainer">
+      <div class="container">
+        <label for="uname"><strong>Username</strong></label>
+        <input type="text" class="textfeedbac" placeholder="Enter Username" name="uname" required>
+        <label for="mail"><strong>City</strong></label>
+        <input type="email" class="textfeedbac" placeholder="Enter E-mail" name="mail" required>
+        <label for="psw"><strong>Review</strong></label>
+        <textarea name="feedback"  class="textfeedback"  cols="30" rows="10"></textarea>
+      </div>
+      <button type="submit"><strong>Submit</strong></button>
+    </form>
+    <br/>
+    <a href="{{url_for('core.index')}}" class="btn btn-primary">Go back to Homepage</a>
+  </body>
+</html>

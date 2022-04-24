@@ -1,0 +1,164 @@
+    {%extends "base.html"%} {%block content%}
+
+    <div class="card text-center">
+      <div class="card-header"></div>
+      <div class="card-body" style="margin-top: 3%">
+        <h5 class="card-title">{{from_city}} To {{to_city}}</h5>
+      </div>
+      <div class="card-footer text-muted">{{date}}</div>
+    </div>
+    <br />
+
+     <form method="post" id="Form" action="#">
+      <div id="NoPass">
+        <h5>Select Number Of Passengers</h5>
+        <input
+          type="number"
+          id="myNumber"
+          min="-1"
+          max="4"
+          value="1"
+          name="Passengers"
+        />
+      </div>
+      <table id="customers">
+        <tr>
+          <th>Bus Name</th>
+          <th>Time</th>
+          <th>Duration</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="form-check-input"
+              style="margin-right: 10px"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              value="{{Neeta}}"
+            />Neeta Travels
+          </td>
+          <td>9.00 AM</td>
+          <td>2HRs 30 Mins</td>
+          <td>3000 Rs</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="form-check-input"
+              style="margin-right: 10px"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              value="VRL"
+            />VRL Travels
+          </td>
+          <td>11.00 AM</td>
+          <td>3HRs 55 Mins</td>
+          <td>3000 Rs</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="form-check-input"
+              style="margin-right: 10px"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault3"
+              value="Shrinath"
+            />Shrinath Travels
+          </td>
+          <td>13.00 PM</td>
+          <td>3HRs 30 Mins</td>
+          <td>4500 Rs</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="form-check-input"
+              style="margin-right: 10px"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault3"
+              value="SRS"
+            />SRS Travels
+          </td>
+          <td>15.00 PM</td>
+          <td>2HRs 25 Mins</td>
+          <td>4000 Rs</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="form-check-input"
+              style="margin-right: 10px"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault3"
+              value="HANS"
+            />HANS TRAVELS
+          </td>
+          <td>17.00 PM</td>
+          <td>2HRs 50 Mins</td>
+          <td>3200 Rs</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="form-check-input"
+              style="margin-right: 10px"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault3"
+              value="Gujarat"
+            />Gujarat Travels
+          </td>
+          <td>18.00 PM</td>
+          <td>2HRs 45 Mins</td>
+          <td>3000 Rs</td>
+        </tr>
+      </table>
+
+      <div id="Submit">
+        <button type="submit">proceed to pay</button>
+      </div>
+    </form>
+    <script>
+      function IncreaseFunction() {
+        document.getElementById("myNumber").stepUp();
+      }
+      function DecreaseFunction() {
+        document.getElementById("myNumber").stepDown();
+      }
+    </script>
+    <section class="stickey-bottom">
+  <!-- Footer -->
+  
+  <footer class="text-center text-white" style="background-color: #0a4275;">
+    <!-- Grid container -->
+    {%if not current_user.is_authenticated%}
+    <div class="container p-4 pb-0">
+      <!-- Section: CTA -->
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <button type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button>
+        </p>
+      </section>
+      <!-- Section: CTA -->
+    </div>
+    <!-- Grid container -->
+{%endif%}
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: BuggyBus
+      <a class="text-white" href="{{url_for('core.contact')}}">Contact Us</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</section>
+    {%endblock%}
